@@ -58,7 +58,6 @@ public class apicode {
         conn.disconnect();
 
         String xmlData = sb.toString();
-        System.out.println(xmlData);
 
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

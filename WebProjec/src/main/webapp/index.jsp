@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="OpneApi.WifiService, OpneApi.WifiInfo, java.util.List, OpneApi.HistoryService, OpneApi.LocationHistory" %>
+<%@ page import="OpneApi.BookmarkGroupService" %>
+<%@ page import="OpneApi.BookmarkGroupInfo" %>
+<%@ page import="OpneApi.BookmarkListService" %>
+<%@ page import="OpneApi.BookmarkListInfo" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +13,6 @@
     <title>와이파이 정보 구하기</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
             margin: 0;
             padding: 20px;
         }
@@ -42,7 +46,7 @@
             width: 150px;
         }
         button {
-            background-color: #4CAF50; /* Green */
+            background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -133,6 +137,8 @@
         <a href="index.jsp">홈</a>
         <a href="reallocationhistory.jsp">와이파이 히스토리 목록</a>
         <a href="load-wifi.jsp">Open API 와이파이 정보 가져오기</a>
+        <a href="bookmark-list.jsp">즐겨 찾기 보기 </a>
+        <a href="bookmark-group.jsp">즐겨 찾기 그룹 관리</a>
     </nav>
     <label for="latitude">LAT:</label>
     <input type="text" id="latitude" value="0.0">
@@ -180,7 +186,7 @@
                 <td><%= String.format("%.2f", wifi.getDistance()) %></td>
                 <td><%= wifi.getManagementNumber() %></td>
                 <td><%= wifi.getGugun() %></td>
-                <td><%= wifi.getWifiName() %></td>
+                <td><a href="locationdetail.jsp?management_number=<%= wifi.getManagementNumber() %>&distance=<%= wifi.getDistance() %>"><%= wifi.getWifiName() %></a></td>
                 <td><%= wifi.getDoroAddress() %></td>
                 <td><%= wifi.getDetailAddress() %></td>
                 <td><%= wifi.getFloor() %></td>

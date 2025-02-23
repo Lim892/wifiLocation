@@ -7,7 +7,6 @@
     <title>와이파이 정보</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 20%;
             background-color: #ffffff;

@@ -29,7 +29,7 @@ public class WifiService {
                     "(6371 * acos(cos(radians(?)) * cos(radians(y_coordinate)) * cos(radians(x_coordinate) - radians(?)) + sin(radians(?)) * sin(radians(y_coordinate)))) AS distance " +
                     "FROM wifi_information_TABLE " +
                     "ORDER BY distance " +
-                    "LIMIT 10";
+                    "LIMIT 20";
             PreparedStatement pstmt = dbConn.prepareStatement(sql);
             pstmt.setDouble(1, latitude);
             pstmt.setDouble(2, longitude);
