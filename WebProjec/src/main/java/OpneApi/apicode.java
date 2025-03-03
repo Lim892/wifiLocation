@@ -29,7 +29,7 @@ public class apicode {
         int recordCount = 0;
 
         StringBuilder urlBuilder = new StringBuilder("http://openapi.seoul.go.kr:8088"); /*URL*/
-        urlBuilder.append("/" + URLEncoder.encode("41514c474762726537357353527552", "UTF-8")); /*인증키 (sample사용시에는 호출시 제한됩니다.)*/
+        urlBuilder.append("/" + URLEncoder.encode("apikey", "UTF-8")); /*인증키 (sample사용시에는 호출시 제한됩니다.)*/
         urlBuilder.append("/" + URLEncoder.encode("xml", "UTF-8")); /*요청파일타입 (xml,xmlf,xls,json) */
         urlBuilder.append("/" + URLEncoder.encode("TbPublicWifiInfo", "UTF-8")); /*서비스명 (대소문자 구분 필수입니다.)*/
         urlBuilder.append("/" + URLEncoder.encode(String.valueOf(start), "UTF-8")); /*요청시작위치 */
